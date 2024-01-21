@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 
@@ -8,7 +8,7 @@ class RegistroController extends Controller
 {
     //Formulario de registro de usuarios
     public function formularioRegistro(){
-        return view('formulario.registro');
+        return view('auth.registro');
     }
 
     public function guardarRegistro(Request $request){

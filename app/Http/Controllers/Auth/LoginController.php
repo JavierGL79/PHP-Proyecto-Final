@@ -7,33 +7,23 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
-
     use AuthenticatesUsers;
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
+    
+     //Redirección después de login exitoso
+ 
     protected $redirectTo = '/home';
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+    
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
     }
+    
+       // Sobrescribe el método redirectTo
+       protected function redirectTo()
+       {
+           // Si hay una URL previa almacenada en la sesión, redirige a esa URL
+           return session()->get('url.intended', $this->redirectTo);
+       }
+
 }

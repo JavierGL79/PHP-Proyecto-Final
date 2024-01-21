@@ -18,9 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/registro', [RegistroController::class, 'formularioRegistro']);
-Route::post('/registro', [RegistroController::class, 'guardarRegistro']);
+Route::get('/registro', [Auth\RegistroController::class, 'formularioRegistro']);
+Route::post('/registro', [Auth\RegistroController::class, 'guardarRegistro']);
 
-Auth::routes();
+Auth::routes();  //Crea las rutas necesarias para el registro, login y logout.
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

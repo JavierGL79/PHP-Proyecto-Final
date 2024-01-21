@@ -35,7 +35,7 @@
                     <!-- Si el usuario no está autenticado, y está en la página de registro, mostrar sólo botón de Login-->
                     @if(Request::is('registro'))
                         <li class="nav-item">
-                            <a class="nav-link"  href="/login">Login</a>
+                            <a class="nav-link" href="{{ route('login') }}">Login</a>
                         </li>
                     @else
                         <li class="nav-item">
