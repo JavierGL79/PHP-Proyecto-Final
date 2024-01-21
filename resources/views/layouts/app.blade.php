@@ -20,9 +20,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/registro">Nuevo Usuario</a>
-                </li>
+                @if(Request::is('registro'))
+                    <li class="nav-item">
+                        <a class="nav-link"  href="/login">Login</a>
+                    </li>
+                @else
+                    <li class="nav-item">
+                        <a class="nav-link"  href="/registro">Nuevo Usuario</a>
+                    </li>
+                @endif
                 <li class="nav-item">
                     <a class="nav-link" href="#">Buscar</a>
                 </li>
