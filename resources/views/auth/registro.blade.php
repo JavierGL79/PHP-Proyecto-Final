@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-    <!-- resources/views/registro/formulario.blade.php -->
+    <!-- resources/views/registro/auth.blade.php -->
 <div class="container" id="container">
         <div class="row justify-content-center" id="columna">
             <div class="col-md-6">

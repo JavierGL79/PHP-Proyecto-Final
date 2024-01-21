@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\RegistroController;
+use App\Http\Controllers\Auth\RegistroController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,8 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/registro', [Auth\RegistroController::class, 'formularioRegistro']);
-Route::post('/registro', [Auth\RegistroController::class, 'guardarRegistro']);
+Route::get('/registro', [RegistroController::class, 'formularioRegistro']);
+Route::post('/registro', [RegistroController::class, 'guardarRegistro']);
 
 Auth::routes();  //Crea las rutas necesarias para el registro, login y logout.
 
