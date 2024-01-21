@@ -20,3 +20,7 @@ Route::get('/', function () {
 
 Route::get('/registro', [RegistroController::class, 'formularioRegistro']);
 Route::post('/registro', [RegistroController::class, 'guardarRegistro']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

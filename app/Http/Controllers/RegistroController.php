@@ -19,7 +19,8 @@ class RegistroController extends Controller
             'password' => [
                 'required',
                 'string',
-                'min:8',  
+                'regex:/.{4}/',
+                //'regex:/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/',  //Regla de validación: 8 caracteres y al menos una letra y número.
                 'confirmed',  // Confirmación de contraseña
             ]
     ]);
