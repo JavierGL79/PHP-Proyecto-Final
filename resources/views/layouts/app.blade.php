@@ -20,18 +20,32 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                @if(Request::is('registro'))
-                    <li class="nav-item">
-                        <a class="nav-link"  href="/login">Login</a>
-                    </li>
-                @else
-                    <li class="nav-item">
-                        <a class="nav-link"  href="/registro">Nuevo Usuario</a>
-                    </li>
-                @endif
                 <li class="nav-item">
                     <a class="nav-link" href="#">Buscar</a>
                 </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <!-- Si el usuario está autenticado, mostrar botón de Logout -->
+                @auth
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Logout</a>
+                    </li>
+                @else
+                <!-- Si el usuario no está autenticado, mostrar botones de Login y Nuevo Registro -->
+                    <!-- Si el usuario no está autenticado, y está en la página de registro, mostrar sólo botón de Login-->
+                    @if(Request::is('registro'))
+                        <li class="nav-item">
+                            <a class="nav-link"  href="/login">Login</a>
+                        </li>
+                    @else
+                        <li class="nav-item">
+                            <a class="nav-link"  href="/login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"  href="/registro">Nuevo Usuario</a>
+                        </li>
+                    @endif
+                 @endauth
             </ul>
         </div>
     </nav>
